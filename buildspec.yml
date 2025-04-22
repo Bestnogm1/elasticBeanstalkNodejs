@@ -6,7 +6,5 @@ phases:
       - npm install
   build:
     commands:
-      - zip -r app.zip .
+      - eb deploy Nodejs-server-application-env-2
   post_build:
-    commands:
-      - eb deploy
