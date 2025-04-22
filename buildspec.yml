@@ -1,0 +1,12 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - npm install
+  build:
+    commands:
+      - zip -r app.zip .
+  post_build:
+    commands:
+      - eb deploy
