@@ -3,8 +3,9 @@ version: 0.2
 phases:
   install:
     commands:
+      - echo "✅ INSTALL PHASE"
       - npm install
   build:
     commands:
-      - eb deploy Nodejs-server-application-env-2
-  post_build:
+      - echo "✅ BUILD PHASE"
+      - exit 1 # 👈 Intentionally fail the build
