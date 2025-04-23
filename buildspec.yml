@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo "✅ INSTALL PHASE"
+      - echo "✅ INSTALL PHASE test 1"
       - npm install
   build:
     commands:
