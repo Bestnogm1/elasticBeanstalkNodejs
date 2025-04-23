@@ -8,4 +8,3 @@ phases:
   build:
     commands:
       - echo "✅ BUILD PHASE"
-      - exit 1 # 👈 Intentionally fail the build
