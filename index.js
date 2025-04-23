@@ -17,6 +17,11 @@ app.get("/testing", (req, res) => {
   res.json({ message: "this is the testing lets get this bread!" });
 });
 
+app.get("/", (req, res) => {
+  console.log("API endpoint hit part3");
+  res.json({ message: "this is the testing lets get this bread!" });
+});
+
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
