@@ -7,7 +7,6 @@ Resources:
     Properties:
       BucketName: my-learning-bucket-${AWS::AccountId}-${AWS::Region}
       AccessControl: Private
-
 Outputs:
   BucketName:
     Description: Name of the created S3 bucket
