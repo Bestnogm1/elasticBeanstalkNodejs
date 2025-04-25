@@ -8,6 +8,9 @@ phases:
   build:
     commands:
       - echo "✅ BUILD PHASE"
+  artifacts:
+    files:
+      - "template.yaml"
 # Layer | Tech
 # Frontend | React or HTML form to upload images to S3
 # Backend | AWS Lambda function (Node.js or Python)
