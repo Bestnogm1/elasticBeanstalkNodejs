@@ -14,12 +14,12 @@ app.get("/api", (req, res) => {
 
 app.get("/testing", (req, res) => {
   console.log("API endpoint hit part3");
-  res.json({ message: "this is the testing lets get this bread!" });
+  res.json({ message: "Works on testing" });
 });
 
 app.get("/", (req, res) => {
   console.log("API endpoint hit part3");
-  res.json({ message: "this is the testing lets get this bread!" });
+  res.json({ message: "Works on home" });
 });
 
 // Start the server
