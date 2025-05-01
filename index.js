@@ -19,7 +19,7 @@ app.get("/testing", (req, res) => {
 
 app.get("/", (req, res) => {
   console.log("API endpoint hit part3");
-  res.json({ message: "Works on home" });
+  res.json({ message: "Works on / request" });
 });
 
 // Start the server
