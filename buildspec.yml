@@ -12,9 +12,7 @@ phases:
       - zip -r app.zip . -x "node_modules/*" ".git/*" "README.md" "template.yaml" "test.txt" "tet"
       - echo "🧪 Contents of current dir:"
       - ls -la
-
-artifacts:
-  files:
-    - app.zip
-  discard-paths: yes # 👈 ensures app.zip goes to root
-  base-directory: . # 👈 important: ensures it picks from the right place
+# artifacts:
+#   files:
+#     - app.zip
+#   discard-paths: yes # 👈 ensures app.zip goes to root
