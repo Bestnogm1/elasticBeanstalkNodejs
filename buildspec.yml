@@ -3,18 +3,14 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo "✅ INSTALL PHASE test 1"
+      - echo "✅ INSTALL PHASE"
       - npm install
   build:
     commands:
       - echo "✅ BUILD PHASE"
+      # Optional: run tests or build steps here
+      - zip -r app.zip . -x "*.git*" "node_modules/*"
+
 artifacts:
   files:
-    - "template.yaml"
-# Layer | Tech
-# Frontend | React or HTML form to upload images to S3
-# Backend | AWS Lambda function (Node.js or Python)
-# Pipeline | AWS CodePipeline + CodeBuild + CloudFormation
-# Storage | S3 (original + processed images)
-# Deploy | SAM or CloudFormation stack with Lambda & S3
-# Artifacts | ✅ Zip Lambda function with dependencies and pass it from Build to Deploy
+    - app.zip
