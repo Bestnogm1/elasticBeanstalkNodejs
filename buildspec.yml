@@ -18,3 +18,5 @@ phases:
 artifacts:
   files:
     - output.zip
+  discard-paths: yes
+  base-directory: .
