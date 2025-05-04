@@ -8,7 +8,7 @@ app.use(express.json());
 
 // A simple API endpoint that returns a JSON message
 app.get("/api", (req, res) => {
-  console.log("API endpoint hit part3");
+  console.log("API endpoint hit part3json");
   res.json({ message: "Hello from Express API!" });
 });
 
