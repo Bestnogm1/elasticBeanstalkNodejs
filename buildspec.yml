@@ -10,8 +10,10 @@ phases:
     commands:
       - echo "✅ BUILD PHASE"
       - zip -r app.zip . -x "node_modules/*" ".git/*" "README.md" "template.yaml" "test.txt" "tet"
+      - echo "🧪 Final contents of artifact:"
+      - ls -l app.zip
 
 artifacts:
   files:
     - app.zip
-  discard-paths: yes # 👈 makes app.zip the *root file* of the artifact
+  discard-paths: yes
