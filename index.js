@@ -26,39 +26,3 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
-// https://nodejsbackendbeamstack.s3.us-east-1.amazonaws.com/server/https://nodejsbackendbeamstack.s3.us-east-1.amazonaws.com/server/
-//
-// https://nodejsbackendbeamstack.s3.us-east-1.amazonaws.com/server/https://nodejsbackendbeamstack.s3.us-east-1.amazonaws.com/server/
-
-/***
- * 
-{
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Sid": "AllowS3BucketAccess",
-			"Effect": "Allow",
-			"Action": "s3:*",
-			"Resource": [
-				"arn:aws:s3:::elasticbeanstalk-us-east-1-126279266832",
-				"arn:aws:s3:::elasticbeanstalk-us-east-1-126279266832/*",
-				"arn:aws:s3:::codepipeline-us-east-1-2b63974515f8-4977-96fd-2819b74a5925",
-				"arn:aws:s3:::codepipeline-us-east-1-2b63974515f8-4977-96fd-2819b74a5925/*"
-			]
-		},
-		{
-			"Sid": "AllowS3ObjectAccess",
-			"Effect": "Allow",
-			"Action": "s3:*",
-			"Resource": [
-				"arn:aws:s3:::elasticbeanstalk-us-east-1-126279266832",
-				"arn:aws:s3:::elasticbeanstalk-us-east-1-126279266832/*",
-				"arn:aws:s3:::codepipeline-us-east-1-2b63974515f8-4977-96fd-2819b74a5925",
-				"arn:aws:s3:::codepipeline-us-east-1-2b63974515f8-4977-96fd-2819b74a5925/*"
-			]
-		}
-	]
-}
- * 
- * 
- * */
