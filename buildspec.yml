@@ -1,15 +1,10 @@
 version: 0.2
 
 phases:
-  install:
-    commands:
-      - echo "✅ INSTALL PHASE"
-      - npm install
-
   build:
     commands:
       - echo "✅ BUILD PHASE"
-      - cd ./$BUILD_DIRECTORY
+      - which zip || echo "zip not found"
       - zip -r output.zip . -x ".git/*" "README.md" "template.yaml" "test.txt" "node_modules/*"
       - echo "🧪 Contents of current dir:"
       - ls
