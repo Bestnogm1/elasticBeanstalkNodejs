@@ -22,7 +22,10 @@ version: 0.2
 phases:
   build:
     commands:
-      - zip -r output.zip dist/ .ebextensions/ package.json package-lock.json
+      - cd dist
+      - zip -r ../output.zip .
+      - cd ..
+      - zip -g output.zip .ebextensions/* package.json package-lock.json
 artifacts:
   files:
     - output.zip
