@@ -22,7 +22,6 @@ version: 0.2
 phases:
   build:
     commands:
-      - npm run build # should output to dist/
       - cd dist
       - zip -r ../output.zip . # zip everything from the dist folder
       - cd ..
