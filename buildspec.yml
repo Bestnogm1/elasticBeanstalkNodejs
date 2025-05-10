@@ -12,6 +12,6 @@ phases:
       - unzip -l output.zip
 
 artifacts:
-  base-directory: $BUILD_DIRECTORY
+  base-directory: .
   files:
     - output.zip
