@@ -26,4 +26,4 @@ phases:
       - zip -r output.zip . -x ".git/*" "test.txt" "README.md" "node_modules/*" "output.zip"
 artifacts:
   files:
-    - output.zip
+    - output.zip/**/*
