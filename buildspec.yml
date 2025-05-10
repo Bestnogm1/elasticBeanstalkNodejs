@@ -1,30 +1,29 @@
+# version: 0.2
+
+# phases:
+#   build:
+#     commands:
+#       - echo "✅ BUILD PHASE"
+#       - which zip || echo "zip not found"
+#       - zip -r output.zip . -x ".git/*" "README.md" "template.yaml" "test.txt" "node_modules/*"
+#       - echo "🧪 Contents of current dir:"
+#       - ls
+#       - echo "📦 Verifying output.zip:"
+#       - unzip -l output.zip
+
+# artifacts:
+#   base-directory: .
+#   files:
+#     - "**/*"
+# # The action failed because either the artifact or the Amazon S3 bucket could not be found. Name of artifact bucket: elasticbeanstalkinfrapipe-pipelinestackpipelineart-vxrtvzdtxejd. Verify that this bucket exists. If it exists, check the life cycle policy, then try releasing a change.
+
 version: 0.2
 
 phases:
   build:
     commands:
       - echo "✅ BUILD PHASE"
-      - which zip || echo "zip not found"
-      - zip -r output.zip . -x ".git/*" "README.md" "template.yaml" "test.txt" "node_modules/*"
-      - echo "🧪 Contents of current dir:"
-      - ls
-      - echo "📦 Verifying output.zip:"
-      - unzip -l output.zip
-
+      - zip -r output.zip . -x ".git/*" "test.txt" "README.md" "node_modules/*" "output.zip"
 artifacts:
-  base-directory: .
   files:
-    - "**/*"
-# # The action failed because either the artifact or the Amazon S3 bucket could not be found. Name of artifact bucket: elasticbeanstalkinfrapipe-pipelinestackpipelineart-vxrtvzdtxejd. Verify that this bucket exists. If it exists, check the life cycle policy, then try releasing a change.
-
-# version: 0.2
-
-# phases:
-#   build:
-#     commands:
-#       - cd dist
-#       - zip -r ../output.zip .
-#       - cd ..
-# artifacts:
-#   files:
-#     - output.zip
+    - output.zip
