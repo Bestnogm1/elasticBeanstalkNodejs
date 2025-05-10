@@ -23,7 +23,7 @@ phases:
   build:
     commands:
       - echo "✅ BUILD PHASE"
-      - zip -r output.zip . -x ".git/*" "test.txt" "README.md" "node_modules/*" "output.zip"
+      - zip -r output.zip . -x ".git/*" "test.txt" "README.md" "node_modules/*" "output.zip" "Procfile"
 artifacts:
   files:
     - output.zip
