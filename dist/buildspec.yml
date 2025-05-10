@@ -20,9 +20,6 @@
 version: 0.2
 
 phases:
-  install:
-    commands:
-      - npm install
   build:
     commands:
       - zip -r output.zip dist/ .ebextensions/ package.json package-lock.json
