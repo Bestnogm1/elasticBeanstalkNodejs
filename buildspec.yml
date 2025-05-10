@@ -9,7 +9,7 @@ phases:
   build:
     commands:
       - echo "✅ BUILD PHASE"
-      - cd $CODEBUILD_SRC_DIR
+      - cd ./$BUILD_DIRECTORY
       - zip -r output.zip . -x ".git/*" "README.md" "template.yaml" "test.txt" "node_modules/*"
       - echo "🧪 Contents of current dir:"
       - ls
@@ -17,7 +17,6 @@ phases:
       - unzip -l output.zip
 
 artifacts:
+  base-directory: $BUILD_DIRECTORY
   files:
     - output.zip
-  discard-paths: yes
-  base-directory: .
