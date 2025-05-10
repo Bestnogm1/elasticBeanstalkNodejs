@@ -22,7 +22,7 @@ version: 0.2
 phases:
   build:
     commands:
-      - cd output
+      - cd dist
       - zip -r ../output.zip .
       - cd ..
 artifacts:
