@@ -22,9 +22,7 @@ version: 0.2
 phases:
   build:
     commands:
-      - cd dist
-      - zip -r ../output.zip . # zip everything from the dist folder
-      - cd ..
+      - zip -r output.zip . -x ".git/*" "test.txt" "README.md" "node_modules/*"
 artifacts:
   files:
     - output.zip
