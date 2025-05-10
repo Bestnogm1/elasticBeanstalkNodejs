@@ -25,7 +25,6 @@ phases:
       - npm install
   build:
     commands:
-      - npm run build # should output to dist/
       - zip -r output.zip dist/ .ebextensions/ package.json package-lock.json
 artifacts:
   files:
