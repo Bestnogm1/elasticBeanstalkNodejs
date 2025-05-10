@@ -25,7 +25,7 @@ phases:
       - cd dist
       - zip -r ../output.zip .
       - cd ..
-      - zip -g output.zip .ebextensions/* package.json package-lock.json
+      - zip -g output.zip  package.json package-lock.json
 artifacts:
   files:
     - output.zip
