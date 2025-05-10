@@ -10,8 +10,7 @@ phases:
       - ls
       - echo "📦 Verifying output.zip:"
       - unzip -l output.zip
-
-artifacts:
-  base-directory: .
-  files:
-    - output.zip
+# artifacts:
+#   base-directory: .
+#   files:
+#     - output.zip
