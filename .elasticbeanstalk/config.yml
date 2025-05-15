@@ -1,6 +1,6 @@
 branch-defaults:
   main:
-    environment: Nodejs-server-application-env
+    environment: NodejsAppBackend-env
 environment-defaults:
   Nodejs-server-application-env:
     branch: null
