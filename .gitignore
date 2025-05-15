@@ -1,0 +1,8 @@
+.env
+.production-env
+.codegpt
+fsc-server-prod
+uploads
+/uploads
+uploads/
+uploads/*

@@ -1,0 +1,12 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo "✅ BUILD PHASE"
+      - ls
+      - echo "✅ BUILD DONE"
+artifacts:
+  base-directory: .
+  files:
+    - "**/*"
