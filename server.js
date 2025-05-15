@@ -70,7 +70,7 @@ const prodOrigins = [
 
 export const stripe = Stripe(
   process.env.NODE_ENV === "DEVELOPMENT"
-    ? "sk_test_51McsR8IX7zFd4VkKLCTPTj6kbDHhfjtapiGdIVKmwyQzYul3cCq0Ov7OLdgyCTjyZvQG5hY2dbwUMXTv3k8Z4uBN00phVA6BY5"
+    ? process.env.STRIPE_TEST_SECRET_KEY
     : process.env.STRIPE_SECRET_KEY
 );
 
