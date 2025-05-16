@@ -105,18 +105,7 @@ app.use("/api/check-distance", distanceRouter);
 app.use("/create-payment-intent", stripeRouter);
 
 // PORT
-const PORT = process.env.PORT || 8080;
+// const PORT = process.env.PORT || 8080;
+const PORT = 8080;
 
 app.listen(PORT, () => console.log("Listening On Port " + PORT));
-// import express from "express";
-
-// const app = express();
-// const port = process.env.PORT || 8080;
-
-// app.get("/", (req, res) => {
-//   res.send("✅ Hello from Elastic Beanstalk!");
-// });
-
-// app.listen(port, () => {
-//   console.log(`Server running on port ${port}`);
-// });
