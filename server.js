@@ -92,7 +92,7 @@ import { router as crmRouter } from "./routes/crm.js";
 
 // Routes
 app.get("/health", (req, res) => {
-  res.json({ health: "OK" });
+  res.json({ health: "OK part 2" });
 });
 app.use("/api/accept-lead", leadRouter);
 app.use("/api/auth", authRouter);
