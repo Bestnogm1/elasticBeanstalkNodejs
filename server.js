@@ -29,51 +29,50 @@ const prodOrigins = [
 ];
 
 // A custom CORS origin function that logs incoming requests
-// const corsOptions =
-//   process.env.NODE_ENV === "PRODUCTION"
-//     ? {
-//         origin: prodOrigins,
-//         methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-//         credentials: true,
-//       }
-//     : {
-//         origin: (origin, callback) => {
-//           console.log("[CORS DEBUG] Incoming request from origin:", origin);
+const corsOptions =
+  process.env.NODE_ENV === "PRODUCTION"
+    ? {
+        origin: prodOrigins,
+        methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+        credentials: true,
+      }
+    : {
+        origin: (origin, callback) => {
+          console.log("[CORS DEBUG] Incoming request from origin:", origin);
 
-//           // If "origin" is undefined, it can be a same-origin request or a tool like Postman.
-//           // You can decide how to handle that. For now, let's allow if we are in dev mode and there's no origin.
-//           if (!origin && process.env.NODE_ENV !== "PRODUCTION") {
-//             console.log(
-//               "[CORS DEBUG] Missing origin header; allowing in development."
-//             );
-//             return callback(null, true);
-//           }
+          // If "origin" is undefined, it can be a same-origin request or a tool like Postman.
+          // You can decide how to handle that. For now, let's allow if we are in dev mode and there's no origin.
+          if (!origin && process.env.NODE_ENV !== "PRODUCTION") {
+            console.log(
+              "[CORS DEBUG] Missing origin header; allowing in development."
+            );
+            return callback(null, true);
+          }
 
-//           // Build the array of allowed origins based on NODE_ENV
-//           const allowedOrigins =
-//             process.env.NODE_ENV === "PRODUCTION" ? prodOrigins : devOrigins;
+          // Build the array of allowed origins based on NODE_ENV
+          const allowedOrigins =
+            process.env.NODE_ENV === "PRODUCTION" ? prodOrigins : devOrigins;
 
-//           if (allowedOrigins.includes(origin)) {
-//             console.log("[CORS DEBUG] Origin allowed:", origin);
-//             callback(null, true);
-//           } else {
-//             console.log("[CORS DEBUG] Origin NOT allowed:", origin);
-//             callback(new Error("Not allowed by CORS"));
-//           }
-//         },
-//         methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-//         credentials: true,
-//       };
+          if (allowedOrigins.includes(origin)) {
+            console.log("[CORS DEBUG] Origin allowed:", origin);
+            callback(null, true);
+          } else {
+            console.log("[CORS DEBUG] Origin NOT allowed:", origin);
+            callback(new Error("Not allowed by CORS"));
+          }
+        },
+        methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+        credentials: true,
+      };
 
-// // Setup CORS using the above options
-// app.use(cors(corsOptions));
+// Setup CORS using the above options
+app.use(cors(corsOptions));
 
 export const stripe = Stripe(
   process.env.NODE_ENV === "DEVELOPMENT"
-    ? process.env.STRIPE_TEST_SECRET_KEY
+    ? process.env.STRIPE_SECRET_TEST_KEY
     : process.env.STRIPE_SECRET_KEY
 );
-
 // Database Connection
 import("./db/connection.js"); // Make sure this file connects to MongoDB
 
@@ -106,5 +105,5 @@ app.use("/api/check-distance", distanceRouter);
 app.use("/create-payment-intent", stripeRouter);
 
 // PORT
-const PORT = 8080;
+const PORT = 8081;
 app.listen(PORT, () => console.log("Listening On Port " + PORT));
